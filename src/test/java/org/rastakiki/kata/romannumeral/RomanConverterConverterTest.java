@@ -27,4 +27,11 @@ public class RomanConverterConverterTest {
         assertThat(romanConverter.toRoman(4)).isEqualTo("IV");
     }
 
+    @Test
+    public void should_convert_decimal_to_numeral2() {
+        RomanConverter romanConverter = new RomanConverter();
+
+        assertThat(romanConverter.toRoman(6)).isEqualTo("VI");
+    }
+
 }

@@ -4,17 +4,13 @@ public class RomanConverter {
 
     public String toRoman(int decimal) {
         String result = "";
-
         int remaining = decimal;
-
-
         for (RomanCharacter romanCharacter : RomanCharacter.values()) {
-            while (remaining >= romanCharacter.decimal) {
-                result += romanCharacter.name();
+            if (remaining >= romanCharacter.decimal) {
                 remaining -= romanCharacter.decimal;
+                return romanCharacter.name() + toRoman(remaining);
             }
         }
-
         return result;
     }
 
